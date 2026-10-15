@@ -1,0 +1,65 @@
+---
+title: "Model Selection"
+output: pdf_document
+date: "2026-07-02"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r}
+library(brms)
+data = read.csv("data.csv")
+colnames(data)
+dim(data)
+str(data)
+```
+
+```{r}
+#Make Normal shot as reference
+data <- data %>%
+  mutate(shot.technique.name = relevel(factor(shot.technique.name), ref = "Normal"))
+full = glm(Goal~distance_to_goal+shot_angle_deg+shot.type.name+shot.technique.name+shot.body_part.name+under_pressure+n_defenders+n_attackers+def_shotcone,family = binomial, data = data)
+summary(full)
+```
+
+```{r}
+step = stepAIC(full, trace = FALSE,direction = "backward")
+step$anova
+```
+
+```{r}
+step = stepAIC(full, direction = "backward")
+```
+#Final model has distance_to_goal, shot_angle_deg, shot.technique.name,shot.body_part.name, n_defenders
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+
