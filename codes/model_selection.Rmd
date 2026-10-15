@@ -34,32 +34,6 @@ step$anova
 step = stepAIC(full, direction = "backward")
 ```
 #Final model has distance_to_goal, shot_angle_deg, shot.technique.name,shot.body_part.name, n_defenders
-```{r}
 
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
 
 
