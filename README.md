@@ -2,31 +2,28 @@
 
 ## Overview
 
-This project focuses on estimating goal probabilities in football using event and tracking data. It explores statistical modelling techniques to develop a model for estimating the probability of a goal.
+This Master's thesis investigates whether Bayesian hierarchical modelling can improve goal probability predictions in football compared with frequentist approaches.
+
+The thesis explores Bayesian hierarchical models incorporating teams, players, goalkeepers, and player positions.
+
+The results indicate that the extended Bayesian hierarchical model, which incorporates player position as an additional hierarchy, achieved better in-sample Brier scores and log loss than the frequentist model. Its performance was also close to StatsBomb's benchmark. Model comparison using Expected Log Predictive Density (ELPD) favoured the extended Bayesian model, while prior sensitivity analysis highlighted the importance of prior specification when interpreting the results.
+
+## Project Status
+
+The thesis has been completed. The code is being reviewed and updated before the full project is made publicly available on GitHub. This process includes removing confidential information and making other necessary adjustments.
+
+Currently, only the `model_selection.Rmd` file has been uploaded. The remaining code files will be added gradually as they are reviewed and prepared for public release.
 
 ## Model Selection
 
-The `model_selection.Rmd` file contains the code used to select an extended logistic regression model through stepwise regression.
+The `model_selection.Rmd` file contains the code used to select the extended logistic regression model through backward stepwise regression, using the `stepAIC()` function and the Akaike Information Criterion (AIC) as the model selection criterion.
 
-Backward elimination was used as the model selection approach. This procedure starts with a model containing all candidate predictors and iteratively removes predictors to identify a more parsimonious model.
+## Technologies and Methods
 
-The `stepAIC()` function from the R `MASS` package was used to perform the selection procedure, with the Akaike Information Criterion (AIC) serving as the model selection criterion.
-
-## Tools and Methods
-
-- **Language:** R
-- **Modelling approach:** logistic regression
-- **Model selection:** Backward stepwise regression
-- **Selection criterion:** Akaike Information Criterion (AIC)
-
-## Files
-
-- `model_selection.Rmd` — R Markdown file containing the code used for model selection.
-
-## Skills Demonstrated
-
+- R and R Markdown
+- Bayesian hierarchical modelling
 - Logistic regression
-- Statistical model selection
-- Backward elimination
-- Information-criterion-based model comparison
-- Reproducible analysis using R Markdown
+- Frequentist and Bayesian model comparison
+- Brier score and log loss
+- Expected Log Predictive Density (ELPD)
+- Prior sensitivity analysis
